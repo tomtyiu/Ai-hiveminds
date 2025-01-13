@@ -20,7 +20,7 @@ HiveMindsAI is a sophisticated AI orchestration framework designed to manage and
 - **Task Moderation:** Ensures that all tasks adhere to predefined guidelines, preventing malicious or illegal activities.
 - **Hierarchical AI Delegation:** Utilizes a "Queen AI" to oversee and delegate tasks to subordinate and sub-subordinate AI agents.
 - **Web Search Integration:** Incorporates Tavily's search API to fetch real-time information from the web.
-- **Code Interpretation:** Includes a specialized code interpreter assistant for tasks involving programming or mathematical computations.
+- **Code Interpretation:** (future) Includes a specialized code interpreter assistant for tasks involving programming or mathematical computations.
 - **Extensible Architecture:** Easily add or modify AI agents and functionalities to suit specific project needs.
 
 ## Prerequisites
