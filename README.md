@@ -107,22 +107,12 @@ Run the Script
 python main.py
 ```
 
+# How it works
 
-## How It Works
-1. Task Moderation
-Before any task is processed, it undergoes moderation to ensure compliance with safety and policy guidelines. The moderation function checks the task description for any prohibited content.
-
-2. Guardian AI Task
-The guardian_ai_task function assesses whether a task is allowed based on predefined guardrails. It ensures tasks are not malicious, illegal, or involve injection attacks.
-
-3. Queen AI Task
-The queen_ai_task function represents the central AI overseeing all operations. It delegates tasks to subordinate AIs by providing detailed instructions.
-
-4. Subordinate AI Task
-Subordinate AIs handle specific tasks as instructed by the Queen AI. They can further delegate sub-tasks to sub-subordinate AIs, ensuring efficient task management.
-
-5. Web Search Integration
-The perform_web_search and tavily_search functions integrate Tavily's search API to fetch real-time information, enhancing the AI's response accuracy.
+Interactive Workflow
+	1.	Enter the tasks you want the Queen AI to manage.
+	2.	The Queen AI will decompose the tasks and delegate them to subordinate agents.
+	3.	Results will be synthesized and presented in a clear, cohesive format.
 
 Example
 Running the Script:
