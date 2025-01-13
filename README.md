@@ -146,9 +146,6 @@ Sample Interaction:
 Enter tasks for the Queen AI to delegate. Type 'done' when finished.
 Enter task name: Data Analysis
 Enter task description: Analyze the sales data for Q4 and provide insights.
-Enter task name: Code Generation
-Enter task description: Write a Python script to automate data cleaning.
-Enter task name: done
 
 HiveMindsAI processing queen task: {'Data Analysis'}
 Queen AI response for Data Analysis:
@@ -165,9 +162,6 @@ Queen AI response for Code Generation:
 HiveMindsAI processing subordinate task: {'Code Generation'}
 Subordinate AI response for Code Generation:
 [Subordinate AI's code script]
-
-Code Interpreter response for Code Generation:
-[Code execution results]
 
 Summary of tasks and responses:
 
