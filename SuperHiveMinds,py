@@ -75,7 +75,7 @@ Task: {task_description}"""}
 
 def sub_subordinate_ai_task(task_name, context):
     response = client.chat.completions.create(
-        model="o1-mini",
+        model="o1",
         messages=[
             #{"role": "developer", "content": f"You are a sub-subordinate AI executing the task: {task_name}."},
             {"role": "user", "content": f"""You are a sub-subordinate AI executing the task: {task_name}""", context}
