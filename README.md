@@ -104,7 +104,7 @@ HiveMindsAI is designed to be run as a standalone Python script. Follow these st
 Run the Script
 
 ```
-python main.py
+python SuperHiveMinds,py
 ```
 
 # How it works
