@@ -145,43 +145,44 @@ Sample Interaction:
 
 Enter tasks for the Queen AI to delegate. Type 'done' when finished.
 Enter task name: Data Analysis
-Enter task description: Analyze the sales data for Q4 and provide insights.
-
-HiveMindsAI processing queen task: {'Data Analysis'}
-Queen AI response for Data Analysis:
-[Queen AI's detailed instructions]
-
-HiveMindsAI processing subordinate task: {'Data Analysis'}
-Subordinate AI response for Data Analysis:
-[Subordinate AI's analysis]
-
-HiveMindsAI processing queen task: {'Code Generation'}
-Queen AI response for Code Generation:
-[Queen AI's detailed instructions]
-
-HiveMindsAI processing subordinate task: {'Code Generation'}
-Subordinate AI response for Code Generation:
-[Subordinate AI's code script]
-
-Summary of tasks and responses:
-
-Task: Data Analysis
-Queen AI response: [Queen AI's detailed instructions]
-Subordinate AI response: [Subordinate AI's analysis]
-
-Task: Code Generation
-Queen AI response: [Queen AI's detailed instructions]
-Subordinate AI response: [Subordinate AI's code script]
-Code Interpreter response: [Code execution results]
-Contributing
-Contributions are welcome! Please follow these steps to contribute:
+Enter task description: Analyze sales data for Q4 and identify trends.
+Enter task name: Web Search
+Enter task description: Search for the latest AI advancements.
+Enter task name: done
 
 Fork the Repository
 
 Create a Feature Branch
 
 ```bash
-Copy code
+HiveMindsAI processing queen task: Data Analysis
+Queen AI response for Data Analysis:
+[Detailed instructions for subordinate AI]
+
+HiveMindsAI processing subordinate task: Data Analysis
+Subordinate AI response for Data Analysis:
+[Analysis of sales data]
+
+HiveMindsAI processing queen task: Web Search
+Queen AI response for Web Search:
+[Detailed instructions for subordinate AI]
+
+HiveMindsAI processing subordinate task: Web Search
+Subordinate AI response for Web Search:
+[Latest AI advancements]
+
+Summary of tasks and responses:
+Task: Data Analysis
+Queen AI response: [Detailed instructions]
+Subordinate AI response: [Sales data analysis]
+
+Task: Web Search
+Queen AI response: [Detailed instructions]
+Subordinate AI response: [AI advancements]
+
+```
+
+```
 git checkout -b feature/YourFeature
 ```
 
