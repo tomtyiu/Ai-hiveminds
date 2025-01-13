@@ -27,10 +27,11 @@ Serper API Key: Obtain from Serper.
 Installation
 Clone the Repository
 
-bash
-Copy code
+'''
 git clone https://github.com/yourusername/HiveMindsAI.git
 cd HiveMindsAI
+'''
+
 Create a Virtual Environment
 
 It's recommended to use a virtual environment to manage dependencies.
