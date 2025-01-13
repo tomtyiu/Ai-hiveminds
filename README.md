@@ -132,10 +132,7 @@ The queen_ai_task function represents the central AI overseeing all operations. 
 4. Subordinate AI Task
 Subordinate AIs handle specific tasks as instructed by the Queen AI. They can further delegate sub-tasks to sub-subordinate AIs, ensuring efficient task management.
 
-5. Code Interpreter Task
-For tasks involving code or mathematics, the code_interpreter_task function utilizes a specialized assistant to write and execute code, providing accurate solutions.
-
-6. Web Search Integration
+5. Web Search Integration
 The perform_web_search and tavily_search functions integrate Tavily's search API to fetch real-time information, enhancing the AI's response accuracy.
 
 Example
