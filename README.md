@@ -106,20 +106,10 @@ Run the Script
 
 ```
 python main.py
-Input Tasks
+```
 
-Enter Task Name: Provide a name for the task you want the AI to handle.
-Enter Task Description: Describe the task in detail. Type 'done' when you have finished entering tasks.
-AI Processing
 
-Queen AI: Processes the main task and delegates it to subordinate AIs.
-Subordinate AI: Executes the delegated task and can further delegate to sub-subordinate AIs if necessary.
-Code Interpreter (Optional): If the task involves coding or mathematical computations, the code interpreter assistant will handle it.
-View Summary
-
-After all tasks are processed, a summary of tasks and their respective AI responses will be displayed.
-
-How It Works
+## How It Works
 1. Task Moderation
 Before any task is processed, it undergoes moderation to ensure compliance with safety and policy guidelines. The moderation function checks the task description for any prohibited content.
 
