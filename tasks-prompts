@@ -1,0 +1,46 @@
+# Taskk prompts:
+
+```bash
+Prompts 1: 
+tasks title: blog post
+Create a 500-word blog post titled "The Mental Health Benefits of Remote Work.Include an introduction that highlights the growing trend of remote work, 
+three main benefits such as reduced commute stress, flexible schedules, and increased work-life balance, 
+and a conclusion that summarizes the key points and encourages employers to consider remote options.
+
+Prompts 2:
+tasks title: customer service
+Respond to the following customer email regarding a delayed shipment:
+
+"Dear Support Team,
+
+I placed an order on March 1st, and I was expecting it to arrive by March 5th. However, it's now March 10th, and I haven't received my package yet. Can you please provide an update on my order status?
+
+Thank you,
+Jane Doe"
+
+Your response should apologize for the delay, provide the current status of the order, offer an estimated delivery date, and include a gesture of goodwill, such as a discount on the next purchase.
+
+Prompts 3 :
+tasks title: Create and schedule twitter
+Create and schedule seven Twitter posts for the upcoming launch of TechNova's new smartwatch. Each post should:
+
+- Highlight a unique feature of the smartwatch (e.g., battery life, health tracking, design).
+- Use engaging language and include relevant hashtags (#TechNovaLaunch, #Smartwatch2025).
+- Incorporate a call-to-action, such as visiting the website or pre-ordering the product.
+- Schedule the posts to be evenly distributed from May 1st to May 7th, 2025, at optimal engagement times (10 AM, 2 PM, 6 PM).
+
+Provide the text for each post along with the scheduled date and time.
+
+
+Prompt 4: 
+tasks title: Literature
+Conduct a literature review on advancements in renewable energy from 2020 to 2025. Your review should:
+
+1. Identify and summarize at least ten peer-reviewed journal articles or reputable sources.
+2. Highlight key technological breakthroughs in solar, wind, and hydroelectric power.
+3. Discuss the impact of these advancements on global energy consumption and sustainability.
+4. Include proper citations in APA format.
+5. Conclude with potential future directions for research in renewable energy.
+
+Organize the review into sections with clear headings for each topic.
+```
