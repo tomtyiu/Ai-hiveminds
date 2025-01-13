@@ -16,12 +16,11 @@ HiveMindsAI is a sophisticated AI orchestration framework designed to manage and
 - [Acknowledgements](#acknowledgements)
 
 ## Features
-
-- **Task Moderation:** Ensures that all tasks adhere to predefined guidelines, preventing malicious or illegal activities.
-- **Hierarchical AI Delegation:** Utilizes a "Queen AI" to oversee and delegate tasks to subordinate and sub-subordinate AI agents.
-- **Web Search Integration:** Incorporates Tavily's search API to fetch real-time information from the web.
-- **Code Interpretation:** (future) Includes a specialized code interpreter assistant for tasks involving programming or mathematical computations.
-- **Extensible Architecture:** Easily add or modify AI agents and functionalities to suit specific project needs.
+- Queen AI: Central orchestrator that breaks down tasks, delegates to specialized agents, and synthesizes results.
+- Subordinate AI Agents: Execute specific tasks assigned by the Queen AI.
+- Dynamic Worker Assignment: Deploys multiple agents dynamically based on task complexity.
+- Moderation and Security: Built-in moderation checks and policy compliance for ethical AI behavior.
+- Web Search Integration: Fetch real-time data through web search for enhanced information retrieval.
 
 ## Prerequisites
 
