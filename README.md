@@ -110,9 +110,9 @@ python main.py
 # How it works
 
 Interactive Workflow
-	1.	Enter the tasks you want the Queen AI to manage.
-	2.	The Queen AI will decompose the tasks and delegate them to subordinate agents.
-	3.	Results will be synthesized and presented in a clear, cohesive format.
+- Enter the tasks you want the Queen AI to manage.
+- The Queen AI will decompose the tasks and delegate them to subordinate agents.
+- Results will be synthesized and presented in a clear, cohesive format.
 
 Example
 Running the Script:
