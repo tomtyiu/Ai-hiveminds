@@ -127,7 +127,6 @@ The perform_web_search and tavily_search functions integrate Tavily's search API
 
 Example
 Running the Script:
-```
 
 ```bash
 python main.py
