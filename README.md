@@ -149,10 +149,8 @@ Enter task description: Analyze sales data for Q4 and identify trends.
 Enter task name: Web Search
 Enter task description: Search for the latest AI advancements.
 Enter task name: done
-
-Fork the Repository
-
-Create a Feature Branch
+```
+## Output
 
 ```bash
 HiveMindsAI processing queen task: Data Analysis
