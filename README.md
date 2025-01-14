@@ -177,8 +177,10 @@ git push origin feature/YourFeature
 
 Open a Pull Request
 
-## Please ensure your code follows the project's coding standards and includes relevant tests.
-## Open-Source, you can  add or upgrade any code.
+Please ensure your code follows the project's coding standards and includes relevant tests.
+
+## Open-Source
+Open-Source, you can  add or upgrade any code.
 
 License
 This project is licensed under the MIT License.
