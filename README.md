@@ -182,10 +182,10 @@ Please ensure your code follows the project's coding standards and includes rele
 ## Open-Source
 Open-Source, you can  add or upgrade any code.
 
-License
+## License
 This project is licensed under the MIT License.
 
-Acknowledgements
+## Acknowledgements
 OpenAI for providing powerful language models.
 Tavily for their advanced search API.
 Serper for search capabilities.
