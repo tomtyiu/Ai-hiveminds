@@ -186,8 +186,9 @@ Open-Source, you can  add or upgrade any code.
 This project is licensed under the MIT License.
 
 ## Acknowledgements
-OpenAI for providing powerful language models.
-Tavily for their advanced search API.
-Serper for search capabilities.
-The open-source community for their invaluable tools and libraries.
-Disclaimer: Ensure that you comply with all relevant terms of service and usage policies for the APIs and tools used in this project.
+- OpenAI for providing powerful language models.
+- Tavily for their advanced search API.
+- Serper for search capabilities.
+- The open-source community for their invaluable tools and libraries.
+
+#### Disclaimer: Ensure that you comply with all relevant terms of service and usage policies for the APIs and tools used in this project.
