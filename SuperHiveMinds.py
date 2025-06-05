@@ -1,6 +1,8 @@
 import sys
 import os
 from openai import OpenAI
+from docx import Document
+from datetime import datetime
 
 # Initialize the OpenAI client
 client = OpenAI()
@@ -162,6 +164,27 @@ def parse_worker_agent_type(task_description):
     return None
 
 
+def save_response(task_name, task_description, response, doc_name="HiveMinds_output.docx"):
+    """Save the response either to a Word document or to a code file."""
+    desc_lower = task_description.lower()
+    if any(k in desc_lower for k in ["blog", "email", "research"]):
+        document = Document(doc_name) if os.path.exists(doc_name) else Document()
+        document.add_heading(task_name, level=1)
+        document.add_paragraph(response)
+        document.add_paragraph("Saved: " + datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        document.save(doc_name)
+    elif "code" in desc_lower:
+        file_name = f"{task_name.replace(' ', '_')}.py"
+        with open(file_name, "w") as f:
+            f.write(response)
+    else:
+        document = Document(doc_name) if os.path.exists(doc_name) else Document()
+        document.add_heading(task_name, level=1)
+        document.add_paragraph(response)
+        document.add_paragraph("Saved: " + datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+        document.save(doc_name)
+
+
 def collect_tasks():
     tasks = {}
     print("Enter tasks for the Queen AI to delegate. Type 'done' when finished.")
@@ -199,12 +222,14 @@ for task_name, task_description in tasks.items():
         queen_final_responses[task_name] = queen_ai_task(
             f"Integrate the following results and produce a final explanation for '{task_description}':\n{combined}"
         )
+        save_response(task_name, task_description, queen_final_responses[task_name])
 
     else:
         print("\nHiveMindsAI processing subordinate task:", task_name)
         subordinate_response = subordinate_ai_task(task_name, queen_instruction)
         subordinate_responses[task_name] = subordinate_response
         print(f"\nSubordinate AI response for {task_name}:\n{subordinate_response}")
+        save_response(task_name, task_description, subordinate_response)
 
 print("\nSummary of tasks and responses:")
 for task_name in tasks.keys():
