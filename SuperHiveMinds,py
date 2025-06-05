@@ -1,12 +1,13 @@
 import requests
 import json
 import sys
+import os
 from openai import OpenAI
 
 # Initialize the OpenAI client
 client = OpenAI()
 OPENAI_API_KEY = os.environ.get('OPENAI_API_KEY')
-X-API-KEY = os.environ.get('X-API-KEY')
+SERPER_API_KEY = os.environ.get('SERPER_API_KEY')
 
 def moderation(task_description):
     moderation = client.moderations.create(input=task_description.lower())
@@ -28,7 +29,7 @@ def perform_web_search(query):
     url = "https://google.serper.dev/search"
     payload = json.dumps({"q": query, "location": "United States"})
     headers = {
-        'X-API-KEY': X-API-KEY,
+        'X-API-KEY': SERPER_API_KEY,
         'Content-Type': 'application/json'
     }
     response = requests.post(url, headers=headers, data=payload)
@@ -77,8 +78,8 @@ def sub_subordinate_ai_task(task_name, context):
     response = client.chat.completions.create(
         model="o1",
         messages=[
-            #{"role": "developer", "content": f"You are a sub-subordinate AI executing the task: {task_name}."},
-            {"role": "user", "content": f"""You are a sub-subordinate AI executing the task: {task_name}""", context}
+            # {"role": "developer", "content": f"You are a sub-subordinate AI executing the task: {task_name}."},
+            {"role": "user", "content": f"You are a sub-subordinate AI executing the task: {task_name}. {context}"}
         ]
     )
     return response.choices[0].message.content
@@ -136,9 +137,10 @@ tasks = collect_tasks()
 queen_responses = {}
 subordinate_responses = {}
 dynamic_worker_responses = {}
+queen_final_responses = {}
 
 for task_name, task_description in tasks.items():
-    print("\nHiveMindsAI processing queen task:", {task_name})
+    print("\nHiveMindsAI processing queen task:", task_name)
     worker_count = parse_task_description(task_description)
     queen_instruction = queen_ai_task(f"Provide detailed instructions for a subordinate AI to: {task_description}")
     queen_responses[task_name] = queen_instruction
@@ -148,12 +150,14 @@ for task_name, task_description in tasks.items():
         print(f"\nAssigning {worker_count} agents to handle the task: {task_name}")
         context = f"Task: {task_description} as instructed by the Queen AI."
         worker_responses = dynamic_worker_assignment(worker_count, task_name, context)
-        dynamic_worker_responses[task_name] = [response for response in worker_responses]
-        queen_instruction_final = queen_ai_task(f"Integrates results and produces a final explanation. {task_description}", dynamic_worker_responses)
-        queen_instruction_final[task_name] = queen_instruction_final
+        dynamic_worker_responses[task_name] = worker_responses
+        combined = "\n".join(worker_responses)
+        queen_final_responses[task_name] = queen_ai_task(
+            f"Integrate the following results and produce a final explanation for '{task_description}':\n{combined}"
+        )
 
     else:
-        print("\nHiveMindsAI processing subordinate task:", {task_name})
+        print("\nHiveMindsAI processing subordinate task:", task_name)
         subordinate_response = subordinate_ai_task(task_name, queen_instruction)
         subordinate_responses[task_name] = subordinate_response
         print(f"\nSubordinate AI response for {task_name}:\n{subordinate_response}")
@@ -164,6 +168,6 @@ for task_name in tasks.keys():
     print(f"Queen AI response: {queen_responses[task_name]}")
     if task_name in dynamic_worker_responses:
         print(f"Dynamic Worker responses: {dynamic_worker_responses[task_name]}")
-        print(f"Queen final response: {queen_instruction_final[task_name]}")
+        print(f"Queen final response: {queen_final_responses[task_name]}")
     elif task_name in subordinate_responses:
         print(f"Subordinate AI response: {subordinate_responses[task_name]}")
