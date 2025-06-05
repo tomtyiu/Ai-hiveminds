@@ -16,7 +16,7 @@ def moderation(task_description):
 
 def guardian_ai_task(task_description):
     response = client.chat.completions.create(
-        model="gpt-4o-mini",
+        model="gpt-4.1-mini",
         messages=[
             {"role": "system", "content": "Your role is to assess whether the user's question is allowed or not."},
             {"role": "user", "content": task_description}
@@ -43,7 +43,7 @@ def perform_web_search(query):
     
 def queen_ai_task(task_description):
     response = client.chat.completions.create(
-        model="o1",
+        model="o4-mini",
         messages=[
             {"role": "user", "content": f"""
              You are the Queen AI, the central orchestrator of a network of specialized AI agents. Your primary purpose is to decompose complex user requests into manageable subtasks, delegate these subtasks to the most capable agents, guide them as necessary, synthesize their outputs, and deliver a coherent, complete, and optimal solution to the end user.
@@ -76,7 +76,7 @@ Task: {task_description}"""}
 
 def sub_subordinate_ai_task(task_name, context):
     response = client.chat.completions.create(
-        model="o1",
+        model="o4-mini",
         messages=[
             # {"role": "developer", "content": f"You are a sub-subordinate AI executing the task: {task_name}."},
             {"role": "user", "content": f"You are a sub-subordinate AI executing the task: {task_name}. {context}"}
@@ -88,7 +88,7 @@ def sub_subordinate_ai_task(task_name, context):
 def subordinate_ai_task(task_name, queen_instruction):
     context = f"Original Queen AI instruction: {queen_instruction}\nSubordinate AI task: {task_name}"
     response = client.chat.completions.create(
-        model="gpt-4o-2024-11-20",
+        model="gpt-4.1",
         messages=[
             {"role": "developer", "content": f"You are a subordinate AI executing the following task: {task_name}."},
             {"role": "user", "content": context}
@@ -101,7 +101,7 @@ def dynamic_worker_assignment(worker_count, task_name, context):
     results = []
     for i in range(worker_count):
         response = client.chat.completions.create(
-            model="gpt-4o-2024-11-20",
+            model="gpt-4.1",
             messages=[
                 {"role": "system", "content": f"You are Worker {i+1} tasked with the following job: {task_name}."},
                 {"role": "user", "content": context}
