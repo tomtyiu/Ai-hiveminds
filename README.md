@@ -1,6 +1,6 @@
 # HiveMindsAI
 
-HiveMindsAI is a sophisticated AI orchestration framework designed to manage and delegate tasks across multiple AI agents seamlessly. Leveraging OpenAI's powerful language models and Tavily's advanced search capabilities, HiveMindsAI ensures efficient task moderation, delegation, and execution, making it ideal for complex projects that require coordinated AI interactions.
+HiveMindsAI is a sophisticated AI orchestration framework designed to manage and delegate tasks across multiple AI agents seamlessly. Leveraging OpenAI's powerful language models and built-in web search capabilities, HiveMindsAI ensures efficient task moderation, delegation, and execution, making it ideal for complex projects that require coordinated AI interactions.
 
 ## Table of Contents
 
@@ -19,8 +19,9 @@ HiveMindsAI is a sophisticated AI orchestration framework designed to manage and
 - Queen AI: Central orchestrator that breaks down tasks, delegates to specialized agents, and synthesizes results.
 - Subordinate AI Agents: Execute specific tasks assigned by the Queen AI.
 - Dynamic Worker Assignment: Deploys multiple agents dynamically based on task complexity.
+- Worker Agent Support: Include "workers can use computer use agent" or "workers can use web search agent" in a task description to spawn specialized helper agents.
 - Moderation and Security: Built-in moderation checks and policy compliance for ethical AI behavior.
-- Web Search Integration: Fetch real-time data through web search for enhanced information retrieval.
+- Web Search Integration: Fetch real-time data using OpenAI's web search tool for enhanced information retrieval.
 
 ## Prerequisites
 
@@ -28,8 +29,6 @@ Before setting up HiveMindsAI, ensure you have the following:
 
 - **Python 3.8+** installed on your system.
 - **OpenAI API Key:** Obtain from [OpenAI](https://openai.com/api/).
-- **Tavily API Key:** Obtain from [Tavily](https://tavily.com/api/).
-- **Serper API Key:** Obtain from [Serper](https://serper.com/).
 
 ## Installation
 
@@ -58,7 +57,7 @@ pip install -r requirements.txt
 If a requirements.txt is not provided, you can install the necessary packages manually:
 
 ```bash
-pip install openai requests tavily
+pip install openai
 ```
 
 Configuration
@@ -79,8 +78,6 @@ Open the .env file in a text editor and add the following:
 env
 ```bash
 OPENAI_API_KEY=your_openai_api_key
-TAVILY_API_KEY=your_tavily_api_key
-SERPER_API_KEY=your_serper_api_key
 ```
 
 Load Environment Variables
@@ -112,6 +109,7 @@ python SuperHiveMinds,py
 Interactive Workflow
 - Enter the tasks you want the Queen AI to manage.
 - The Queen AI will decompose the tasks and delegate them to subordinate agents.
+- Include phrases like "workers can use computer use agent" or "workers can use web search agent" to let each worker spawn specialized helper agents.
 - Results will be synthesized and presented in a clear, cohesive format.
 
 Example
@@ -187,8 +185,6 @@ This project is licensed under the MIT License.
 
 ## Acknowledgements
 - OpenAI for providing powerful language models.
-- Tavily for their advanced search API.
-- Serper for search capabilities.
 - The open-source community for their invaluable tools and libraries.
 
 #### Disclaimer: Ensure that you comply with all relevant terms of service and usage policies for the APIs and tools used in this project.
